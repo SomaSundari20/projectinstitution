@@ -1,0 +1,28 @@
+<div class="mat-elevation-z8">
+  <mat-toolbar color="primary">
+    Institution Details
+    <button mat-icon-button routerLink="/homein">X</button>
+  </mat-toolbar><br>
+  <mat-tab-group>
+    <mat-tab label="Info">
+      <mat-progress-bar mode="determinate" value="15"></mat-progress-bar>
+     
+    </mat-tab>
+    <mat-tab label="Yearly Update">
+      <mat-progress-bar mode="determinate" value="25"></mat-progress-bar>
+    </mat-tab>
+    <mat-tab label="Contact">
+      <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+    </mat-tab>
+    <mat-tab label="Document">
+      <mat-progress-bar mode="determinate" value="50"></mat-progress-bar>
+    </mat-tab>
+    <mat-tab label="Notes">
+      <mat-progress-bar mode="determinate" value="70"></mat-progress-bar>
+    </mat-tab>
+
+  </mat-tab-group><br>
+  <router-outlet></router-outlet>
+  <br><br><br><br>
+
+</div>

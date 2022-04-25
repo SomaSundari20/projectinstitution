@@ -1,0 +1,72 @@
+<div class="content mat-elevation-z8">
+  <ng-container>
+    <button mat-raised-button color="primary" routerLink="/info">Add</button>
+  </ng-container> <br><br>
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="info" matSort>
+
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="name"> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Category </th>
+        <td mat-cell *matCellDef="let element"> {{element.cat}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="rnum">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="rnum">UDise number </th>
+        <td mat-cell *matCellDef="let element"> {{element.rnum}} </td>
+      </ng-container>
+      <ng-container matColumnDef="level">
+        <th mat-header-cell *matHeaderCellDef>Level </th>
+        <td mat-cell *matCellDef="let element"> {{element.level}}</td>
+      </ng-container>
+      <ng-container matColumnDef="hname">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="hname">Head Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.hname}} </td>
+      </ng-container>
+      <ng-container matColumnDef="hphone">
+        <th mat-header-cell *matHeaderCellDef>Head Phone </th>
+        <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+      </ng-container>
+      <ng-container matColumnDef="ophone">
+        <th mat-header-cell *matHeaderCellDef>Office Phone </th>
+        <td mat-cell *matCellDef="let element"> {{element.ophone}} </td>
+      </ng-container>
+      <ng-container matColumnDef="place">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="place">Place</th>
+        <td mat-cell *matCellDef="let element"> {{element.tds}} </td>
+      </ng-container>
+      <ng-container matColumnDef="refer">
+        <th mat-header-cell *matHeaderCellDef>Refer</th>
+        <td mat-cell *matCellDef="let element"> {{element.refer}} </td>
+      </ng-container>
+      <ng-container matColumnDef="zone">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="zone">Zone</th>
+        <td mat-cell *matCellDef="let element"> {{element.zone}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="symbol">
+        <th mat-header-cell *matHeaderCellDef> Modify </th>
+        <td mat-cell *matCellDef="let obj">
+          <button mat-button color="primary" a [routerLink]="['/info',obj.id]">
+            <mat-icon>update</mat-icon>
+          </button>
+          <button mat-button color="primary" (click)="delete(obj.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons>
+    </mat-paginator>
+  </div>
+
+</div>
